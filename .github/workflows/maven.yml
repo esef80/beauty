@@ -22,10 +22,11 @@ jobs:
     - name: Build with Maven
       working-directory: backend
       run: mvn -B package --file pom.xml
+    - run : ls > ls.txt
     - name: Upload build artifacts
       uses: actions/upload-artifact@v2
       with:
         name: beauty
-        path: /**/backend/**/*.jar
+        path: dir.txt
         
       
