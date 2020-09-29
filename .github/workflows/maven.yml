@@ -11,7 +11,6 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -23,7 +22,9 @@ jobs:
     - name: Build with Maven
       working-directory: backend
       run: mvn -B package --file pom.xml
+    - name: Upload build artifacts
       with:
         name: beauty
-        path: backend/*.jar
-    
+        path: *.jar
+        
+      
