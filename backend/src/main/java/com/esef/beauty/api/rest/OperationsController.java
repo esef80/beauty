@@ -27,7 +27,7 @@ public class OperationsController {
     masterRepository.deleteById(id);
   }
 
-  @GetMapping("/get/{id{")
+  @GetMapping("/get/{id}")
   public  Master get(@PathVariable long id) {
     return masterRepository.findById(id).orElseThrow(() -> new RuntimeException("Master not found"));
   }

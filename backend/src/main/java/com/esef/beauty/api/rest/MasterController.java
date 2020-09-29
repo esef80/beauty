@@ -3,12 +3,8 @@ package com.esef.beauty.api.rest;
 import com.esef.beauty.data.MasterRepository;
 import com.esef.beauty.data.OperationRepository;
 import com.esef.beauty.data.dto.Master;
-import com.esef.beauty.data.dto.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Collection;
 
 @RestController()
 @RequestMapping("/masters")
@@ -22,9 +18,6 @@ public class MasterController {
 
   @GetMapping("/list")
   public Iterable<Master> getAll() {
-    Master master = new Master();
-    master.setName("xxxx");
-    masterRepository.save(master);
     return masterRepository.findAll();
   }
 
@@ -45,8 +38,6 @@ public class MasterController {
 
   @GetMapping("/assign_op")
   public String addOperation(@RequestParam("master_id") long masterId, @RequestParam("operation_id") long operationId) {
-    System.out.println("masterId = " + masterId);
-    System.out.println("operationId = " + operationId);
     return "ok";
   }
 }
