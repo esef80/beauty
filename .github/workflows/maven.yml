@@ -25,6 +25,6 @@ jobs:
     - name: Upload build artifacts
       with:
         name: beauty
-        path: *.jar
+        path: beauty.jar
         
       
